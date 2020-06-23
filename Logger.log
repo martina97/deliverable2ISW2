@@ -1009,3 +1009,502 @@ Il numero di file .java relativi alla release è: 468</message>
   <thread>1</thread>
   <message>lista Alias size = 1421</message>
 </record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-06-23T10:19:49.728878Z</date>
+  <millis>1592907589728</millis>
+  <nanos>878000</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>La lista delle release è: </message>
+</record>
+<record>
+  <date>2020-06-23T10:20:01.488435600Z</date>
+  <millis>1592907601488</millis>
+  <nanos>435600</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>numero tickets ID = 435</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.078674200Z</date>
+  <millis>1592907602078</millis>
+  <nanos>674200</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+
+--------------------------------getAllCommit-------</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.090640100Z</date>
+  <millis>1592907602090</millis>
+  <nanos>640100</nanos>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>halfRelease = 7</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.409098700Z</date>
+  <millis>1592907602409</millis>
+  <nanos>98700</nanos>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>il numero dei commit che hanno release &lt; 7 è: 0
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.409838500Z</date>
+  <millis>1592907602409</millis>
+  <nanos>838500</nanos>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+ releaseCommitMap size  = 3344
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.420806800Z</date>
+  <millis>1592907602420</millis>
+  <nanos>806800</nanos>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 1sono : 105
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.421930500Z</date>
+  <millis>1592907602421</millis>
+  <nanos>930500</nanos>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 2sono : 122
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.421930500Z</date>
+  <millis>1592907602421</millis>
+  <nanos>930500</nanos>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 3sono : 220
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.422801300Z</date>
+  <millis>1592907602422</millis>
+  <nanos>801300</nanos>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 4sono : 0
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.422801300Z</date>
+  <millis>1592907602422</millis>
+  <nanos>801300</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 5sono : 34
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.422801300Z</date>
+  <millis>1592907602422</millis>
+  <nanos>801300</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 6sono : 106
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.422801300Z</date>
+  <millis>1592907602422</millis>
+  <nanos>801300</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 7sono : 34
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.423800Z</date>
+  <millis>1592907602423</millis>
+  <nanos>800000</nanos>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 8sono : 64
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.423800Z</date>
+  <millis>1592907602423</millis>
+  <nanos>800000</nanos>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 9sono : 113
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.423800Z</date>
+  <millis>1592907602423</millis>
+  <nanos>800000</nanos>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 10sono : 20
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.424810500Z</date>
+  <millis>1592907602424</millis>
+  <nanos>810500</nanos>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 11sono : 49
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.424810500Z</date>
+  <millis>1592907602424</millis>
+  <nanos>810500</nanos>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 12sono : 356
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.424810500Z</date>
+  <millis>1592907602424</millis>
+  <nanos>810500</nanos>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 13sono : 132
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.425793700Z</date>
+  <millis>1592907602425</millis>
+  <nanos>793700</nanos>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>I commit della release 14sono : 108
+
+</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.425793700Z</date>
+  <millis>1592907602425</millis>
+  <nanos>793700</nanos>
+  <sequence>20</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>la somma di tutti i commit è : 1463</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.496122200Z</date>
+  <millis>1592907602496</millis>
+  <nanos>122200</nanos>
+  <sequence>21</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 240</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.544564Z</date>
+  <millis>1592907602544</millis>
+  <nanos>564000</nanos>
+  <sequence>22</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 301</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.637491600Z</date>
+  <millis>1592907602637</millis>
+  <nanos>491600</nanos>
+  <sequence>23</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 439</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.731553400Z</date>
+  <millis>1592907602731</millis>
+  <nanos>553400</nanos>
+  <sequence>24</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 439</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.824780300Z</date>
+  <millis>1592907602824</millis>
+  <nanos>780300</nanos>
+  <sequence>25</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 589</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:02.886702800Z</date>
+  <millis>1592907602886</millis>
+  <nanos>702800</nanos>
+  <sequence>26</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 446</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.020361800Z</date>
+  <millis>1592907603020</millis>
+  <nanos>361800</nanos>
+  <sequence>27</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 654</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.091391800Z</date>
+  <millis>1592907603091</millis>
+  <nanos>391800</nanos>
+  <sequence>28</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 452</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.185512300Z</date>
+  <millis>1592907603185</millis>
+  <nanos>512300</nanos>
+  <sequence>29</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 696</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.259450Z</date>
+  <millis>1592907603259</millis>
+  <nanos>450000</nanos>
+  <sequence>30</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 693</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.310364500Z</date>
+  <millis>1592907603310</millis>
+  <nanos>364500</nanos>
+  <sequence>31</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 291</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.451231900Z</date>
+  <millis>1592907603451</millis>
+  <nanos>231900</nanos>
+  <sequence>32</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 0</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.522633700Z</date>
+  <millis>1592907603522</millis>
+  <nanos>633700</nanos>
+  <sequence>33</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 0</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:03.720457900Z</date>
+  <millis>1592907603720</millis>
+  <nanos>457900</nanos>
+  <sequence>34</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>
+
+Il numero di file .java relativi alla release è: 468</message>
+</record>
+<record>
+  <date>2020-06-23T10:20:10.380529700Z</date>
+  <millis>1592907610380</millis>
+  <nanos>529700</nanos>
+  <sequence>35</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>lista Alias size = 1421</message>
+</record>

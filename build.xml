@@ -6,23 +6,23 @@
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="deliverable2ISW">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="13"/>
-    <property name="source" value="13"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
     <path id="deliverable2ISW.classpath">
         <pathelement location="bin"/>
         <pathelement location="../../../../../Programmi/Java/lib/java-json.jar/java-json.jar"/>
-        <pathelement location="../../../../../Programmi/Java/lib/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
+        <pathelement location="../../../../../Programmi/Java/lib/org.eclipse.jgit-5.8.0.202006091008-r.jar"/>
         <pathelement location="../../../../../Programmi/Java/lib/slf4j-api-1.7.30.jar"/>
         <pathelement location="../../../../../Programmi/Java/lib/slf4j-api-2.0.0-alpha1-javadoc.jar"/>
-        <pathelement location="../../../../../Programmi/Java/lib/slf4j-simple-1.7.30.jar"/>
+        <pathelement location="../../../../../Programmi/Java/lib/slf4j-simple-1.7.30 (1).jar"/>
     </path>
-    <path id="run.Main (1).classpath">
+    <path id="run.main (1).classpath">
         <path refid="deliverable2ISW.classpath"/>
         <pathelement location="../../../../../Programmi/Java/lib/java-json.jar/java-json.jar"/>
-        <pathelement location="../../../../../Programmi/Java/lib/org.eclipse.jgit-5.7.0.202003110725-r.jar"/>
+        <pathelement location="../../../../../Programmi/Java/lib/org.eclipse.jgit-5.8.0.202006091008-r.jar"/>
         <pathelement location="../../../../../Programmi/Java/lib/slf4j-api-1.7.30.jar"/>
         <pathelement location="../../../../../Programmi/Java/lib/slf4j-api-2.0.0-alpha1-javadoc.jar"/>
-        <pathelement location="../../../../../Programmi/Java/lib/slf4j-simple-1.7.30.jar"/>
+        <pathelement location="../../../../../Programmi/Java/lib/slf4j-simple-1.7.30 (1).jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -59,9 +59,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="Main (1)">
+    <target name="main (1)">
         <java classname="milestone1.Main" failonerror="true" fork="yes">
-            <classpath refid="run.Main (1).classpath"/>
+            <classpath refid="run.main (1).classpath"/>
         </java>
     </target>
 </project>
