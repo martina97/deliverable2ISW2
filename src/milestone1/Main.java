@@ -27,7 +27,7 @@ public class Main {
 
 		Log.setupLogger(); // apre due stream su console e testo
 		// prendo tutta lista release progetto
-		Log.infoLog("La lista delle release è: ");
+		Log.infoLog("La lista delle release e: ");
 		releases = GetJIRAInfo.getListRelease();
 		numRelease = releases.size();
 
@@ -38,16 +38,16 @@ public class Main {
 
 		// prendo tutti i ticket di tipo bug ecc e i relativi campi che mi interessano
 		// DA JIRA e li metto in listaTicket (ci ho tolto i ticket con IV>7)
-		// System.out.println("La lista dei ticket che mi interessano è : ");
+		// System.out.println("La lista dei ticket che mi interessano e : ");
 		listaTicket = GetJIRAInfo.retrieveTickets(name_project, releases);
 		System.out.println("\n\n---------------------------------------------\n\n");
 
-		// salvo la dimensione di listaTicket, ossia il numero di ticket, che mi servirà
+		// salvo la dimensione di listaTicket, ossia il numero di ticket, che mi servira
 		// per proportion
 		numTicket = listaTicket.size();
 
 		// System.out.println("\n\nLa lista dei ticket di tipo bug,
-		// closed,resolved,fixed è:");
+		// closed,resolved,fixed e:");
 		// RetrieveTicketsJIRA.printArrayList(listaTicket);
 
 		// System.out.println("\n\nSTAMPO LISTA DATE\n");
@@ -81,23 +81,23 @@ public class Main {
 		// calcola Proportion
 		// proportion(good);
 
-		// ora devo modificare AV di ogni ticket, la setto manualmente perchè i dati
+		// ora devo modificare AV di ogni ticket, la setto manualmente perche i dati
 		// presi da JIRA riguardo le AV sono quasi tutti sbagliati
 		modifyListAV();
 
-		// adesso devo prendere la metà delle release, questo lavoro lo faccio qui cosiì
+		// adesso devo prendere la meta delle release, questo lavoro lo faccio qui cosii
 		// lavoro solamente sulle AV che ho calcolato, e dico che
-		// se nella lista di AV c'è una release che ha un valore maggiore della metà del
+		// se nella lista di AV c'e una release che ha un valore maggiore della meta del
 		// # di release, levo tale valore dalla lista
 
-		// inoltre, se ho un IV maggiore della metà del # di release, levo il ticket
+		// inoltre, se ho un IV maggiore della meta del # di release, levo il ticket
 		// dalla lista
 
 		// BOOKKEEPER-688 IV: 4 OV: 6 FV: 8 AV: [4, 5, 6, 7] --> mi serve sapere AV,
-		// perchè anche se FV è 8, AV contiene le corrette release
+		// perche anche se FV e 8, AV contiene le corrette release
 		// BOOKKEEPER-752 IV: 6 OV: 8 FV: 8 AV: [6, 7]
 		// BOOKKEEPER-859 IV: 1 OV: 10 FV: 12 AV: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-		// non posso cancellare tali ticket, perciò controllo AV, tanto FV e OV non mi
+		// non posso cancellare tali ticket, percio controllo AV, tanto FV e OV non mi
 		// servono
 
 		// removeRelease();
@@ -129,7 +129,7 @@ public class Main {
 		System.out.println("\nI ticket che hanno date inconsistenti e che vengono rimossi dalla listTicket sono : ");
 		for (int i = 0; i < listaTicket.size(); i++) {
 
-			// se IV>FV o IV> OV (dati da JIRA) rimuovo i ticket perchè sono sbagliati
+			// se IV>FV o IV> OV (dati da JIRA) rimuovo i ticket perche sono sbagliati
 			if (listaTicket.get(i).getIV() > listaTicket.get(i).getFV()) {
 				System.out.println(listaTicket.get(i).getID());
 				listaTicket.remove(i);
@@ -145,22 +145,22 @@ public class Main {
 
 		System.out.println("-----------\n\n");
 
-		// inverto ordine listaTicket per semplicità
+		// inverto ordine listaTicket per semplicita
 		Collections.reverse(listaTicket);
 
-		// ora ho la lista perfetta di ticket, non dovrò più toglierli, quindi associo
-		// un indice a ogni ticket così da rendere più semplice
+		// ora ho la lista perfetta di ticket, non dovro piu toglierli, quindi associo
+		// un indice a ogni ticket cosi da rendere piu semplice
 		// il confronto tra le liste
 		for (int i = 0; i < listaTicket.size(); i++) {
 			listaTicket.get(i).setIndex(i);
 		}
 
-		System.out.println("La lista ordinata di ticket è:\n ");
+		System.out.println("La lista ordinata di ticket e:\n ");
 		// GetJIRAInfo.printArrayList(listaTicket);
 		System.out.println("-----------\n\n\n");
 
 		// prendo i ticket che rispettano le condizioni per implementare proportion
-		// i ticket ora sono 422, poichè ne ho tolti 13 prima
+		// i ticket ora sono 422, poiche ne ho tolti 13 prima
 		for (int i = 0; i < listaTicket.size(); i++) {
 
 			// System.out.println(listaTicket.get(i).getID());
@@ -176,7 +176,7 @@ public class Main {
 
 			// IV!=0
 			if (IV != 0) {
-				// FV!=IV e FV!=OV sennò P=0
+				// FV!=IV e FV!=OV senno P=0
 				count6++;
 				if (FV != IV && FV != OV && IV <= OV) { // ticket buoni per calcolare proportion
 					// System.out.println(listaTicket.get(i).getID());
@@ -217,12 +217,12 @@ public class Main {
 				System.out.println(listaTicket.get(i).getID() + "ERRORE: creationDate is after resolutionDate");
 			}
 
-			// SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHè IV<= OV --> IV = 1 PER
+			// SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHe IV<= OV --> IV = 1 PER
 			// FORZA!!!!!!!!!!!!!!
 
 		}
 
-		System.out.println("La lista di ticket che servono per il calcolo di proportion è: \n");
+		System.out.println("La lista di ticket che servono per il calcolo di proportion e: \n");
 		// GetJIRAInfo.printArrayList(goodTicket);
 		System.out.println("-----------\n\n\n");
 
@@ -309,14 +309,14 @@ public class Main {
 
 		for (i = 0; i < listaTicket.size(); i++) {
 
-			// se FV = OV e non ho AV (IV == 0) , rimuovo il ticket perchè nel calcolo del
-			// predictedIV con proportion, la cui formula è IV = FV-(FV-OV)*P, il termine a
+			// se FV = OV e non ho AV (IV == 0) , rimuovo il ticket perche nel calcolo del
+			// predictedIV con proportion, la cui formula e IV = FV-(FV-OV)*P, il termine a
 			// dx fa zero
 			// e quindi proportion non l'ho utilizzato
 
 			// IV = 0 se
 			// il ticket non ha AV presa da JIRA
-			// AV presa da JIRA è inconsistente (IV>=OV o IV>FV)
+			// AV presa da JIRA e inconsistente (IV>=OV o IV>FV)
 			if (listaTicket.get(i).getIV() == 0 && listaTicket.get(i).getFV() == listaTicket.get(i).getOV()) {
 				removed_list.add(listaTicket.get(i));
 				listaTicket.remove(i);
@@ -330,7 +330,7 @@ public class Main {
 		// GetJIRAInfo.printArrayList(listaTicket);
 		// una volta fatti i check,devo togliere dalla lista dei ticket i ticket che
 		// hanno IV = 0 e OV o FV > 7
-		// perchè non posso calcolarne predictedIV e quindi non mi servono
+		// perche non posso calcolarne predictedIV e quindi non mi servono
 		/*
 		 * System.out.println("\n\ndopo aver tolto IV=0, OV o FV>7"); for(int k =
 		 * 0;k<listaTicket.size();k++) { if(listaTicket.get(k).getIV() == 0 &&
@@ -366,28 +366,28 @@ public class Main {
 		 */
 
 		System.out.println("\n\n------------------------------\n");
-		System.out.println("removed_list--------I ticket rimuovo perchè hanno FV = OV sono: ");
+		System.out.println("removed_list--------I ticket rimuovo perche hanno FV = OV sono: ");
 		for (i = 0; i < removed_list.size(); i++) {
 			System.out.println("ticket = " + removed_list.get(i).getID() + " \t\tIV = " + removed_list.get(i).getIV()
 					+ " \t\tOV = " + removed_list.get(i).getOV() + " \t\tFV = " + removed_list.get(i).getFV()
 					+ " \t\tAV = " + removed_list.get(i).getAV());
 		}
 
-		// inverto ordine listaTicket per semplicità
+		// inverto ordine listaTicket per semplicita
 		Collections.reverse(listaTicket);
 
-		// ora ho la lista perfetta di ticket, non dovrò più toglierli, quindi associo
-		// un indice a ogni ticket così da rendere più semplice
+		// ora ho la lista perfetta di ticket, non dovro piu toglierli, quindi associo
+		// un indice a ogni ticket cosi da rendere piu semplice
 		// il confronto tra le liste
 		for (i = 0; i < listaTicket.size(); i++) {
 			listaTicket.get(i).setIndex(i);
 		}
 
-		System.out.println("\n***********  La lista ordinata di ticket è: ************\n ");
+		System.out.println("\n***********  La lista ordinata di ticket e: ************\n ");
 		// GetJIRAInfo.printArrayList(listaTicket);
 		System.out.println("-----------\n\n\n");
 
-		// avrò gia tolto IV>7
+		// avro gia tolto IV>7
 
 		// prendo i ticket che rispettano le condizioni per implementare proportion
 		for (i = 0; i < listaTicket.size(); i++) {
@@ -406,7 +406,7 @@ public class Main {
 
 			// IV!=0
 			if (IV != 0) {
-				// FV!=IV e FV!=OV sennò P=0
+				// FV!=IV e FV!=OV senno P=0
 				if (FV != IV && FV != OV && IV <= OV) { // ticket buoni per calcolare proportion
 					// System.out.println(listaTicket.get(i).getID());
 					/*
@@ -442,7 +442,7 @@ public class Main {
 				System.out.println(listaTicket.get(i).getID() + "ERRORE: creationDate is after resolutionDate");
 			}
 
-			// SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHè IV<= OV --> IV = 1 PER
+			// SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHe IV<= OV --> IV = 1 PER
 			// FORZA!!!!!!!!!!!!!!
 
 		}
@@ -461,7 +461,7 @@ public class Main {
 		 * System.out.
 		 * println("\nI ticket che hanno date inconsistenti e che vengono rimossi dalla listTicket sono : "
 		 * ); for(int i = 0; i<listaTicket.size();i++){ //se IV>FV o IV> OV (dati da
-		 * JIRA) rimuovo i ticket perchè sono sbagliati if(listaTicket.get(i).getIV() >
+		 * JIRA) rimuovo i ticket perche sono sbagliati if(listaTicket.get(i).getIV() >
 		 * listaTicket.get(i).getFV()) { System.out.println(listaTicket.get(i).getID());
 		 * listaTicket.remove(i); i--; count++; } }
 		 * 
@@ -471,17 +471,17 @@ public class Main {
 		 * 0; System.out.println("-----------\n\n");
 		 * 
 		 * 
-		 * //inverto ordine listaTicket per semplicità Collections.reverse(listaTicket);
+		 * //inverto ordine listaTicket per semplicita Collections.reverse(listaTicket);
 		 * 
-		 * //ora ho la lista perfetta di ticket, non dovrò più toglierli, quindi associo
-		 * un indice a ogni ticket così da rendere più semplice //il confronto tra le
+		 * //ora ho la lista perfetta di ticket, non dovro piu toglierli, quindi associo
+		 * un indice a ogni ticket cosi da rendere piu semplice //il confronto tra le
 		 * liste for(int i = 0; i<listaTicket.size();i++) {
 		 * listaTicket.get(i).setIndex(i); }
 		 * 
-		 * System.out.println("La lista ordinata di ticket è:\n ");
+		 * System.out.println("La lista ordinata di ticket e:\n ");
 		 * RetrieveTicketsJIRA.printArrayList(listaTicket);
 		 * System.out.println("-----------\n\n\n"); //prendo i ticket che rispettano le
-		 * condizioni per implementare proportion //i ticket ora sono 422, poichè ne ho
+		 * condizioni per implementare proportion //i ticket ora sono 422, poiche ne ho
 		 * tolti 13 prima for(int i = 0; i<listaTicket.size();i++){
 		 * 
 		 * //System.out.println(listaTicket.get(i).getID()); LocalDateTime creationDate
@@ -493,7 +493,7 @@ public class Main {
 		 * System.out.println("IV = " + IV); // System.out.println("FV = " + FV);
 		 * 
 		 * 
-		 * //IV!=0 if (IV != 0) { //FV!=IV e FV!=OV e IV<= OV , sennò P=0 count6++; if(
+		 * //IV!=0 if (IV != 0) { //FV!=IV e FV!=OV e IV<= OV , senno P=0 count6++; if(
 		 * FV != IV && FV!= OV && IV<=OV) { // ticket buoni per calcolare proportion //
 		 * System.out.println(listaTicket.get(i).getID()); /*
 		 * System.out.println("ticket = " + listaTicket.get(i).getID() + "\t\tcreated: "
@@ -531,7 +531,7 @@ public class Main {
 		 * 
 		 * 
 		 * 
-		 * //SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHè IV<= OV --> IV = 1 PER
+		 * //SE HO OV = 1 E NON HO IV, SICURAMENTE, POICHe IV<= OV --> IV = 1 PER
 		 * FORZA!!!!!!!!!!!!!!
 		 * 
 		 * 
@@ -541,7 +541,7 @@ public class Main {
 		 * }
 		 * 
 		 * System.out.
-		 * println("La lista di ticket che servono per il calcolo di proportion è: \n");
+		 * println("La lista di ticket che servono per il calcolo di proportion e: \n");
 		 * RetrieveTicketsJIRA.printArrayList(goodTicket);
 		 * System.out.println("-----------\n\n\n");
 		 * 
@@ -564,12 +564,12 @@ public class Main {
 
 	public static void proportion(ArrayList<Ticket> listGood, ArrayList<Ticket> listNoIV) {
 
-		// uso tree map perchè ha i valori di keys in ordine
+		// uso tree map perche ha i valori di keys in ordine
 		TreeMap<Integer, Integer> proportionValue = new TreeMap<>(); // contiene indice del ticket e il valore di P
 
 		// System.out.println("\n\nticketList.size() = " + listaTicket.size());
 		// float percentage = (float) (listaTicket.size() * 0.01); //calcolo la
-		// percentuale dalla listaticket in cui ne ho tolti circa la metà, a causa dei
+		// percentuale dalla listaticket in cui ne ho tolti circa la meta, a causa dei
 		// check
 		// float percentage2 = (float) (488 * 0.01);
 		System.out.println("numTicket = " + numTicket);
@@ -608,7 +608,7 @@ public class Main {
 		}
 
 		System.out.println("-----------------\n\n");
-		// System.out.println("il primo ticket è: " + listNoIV.get(0).getID());
+		// System.out.println("il primo ticket e: " + listNoIV.get(0).getID());
 
 		// FACCIO PROVA CON IL PRIMO TICKET E GLI APPLICO PROPORTION
 
@@ -668,13 +668,13 @@ public class Main {
 			Integer predicted_IV = FV - (FV - OV) * P_average_round;
 			System.out.println("predicted_IV = " + predicted_IV);
 
-			// devo settare IV dei ticket presenti nella listNoIV, ma poi dovrò cambiare
-			// anche quelli in listaTicket, che è la lista principale
+			// devo settare IV dei ticket presenti nella listNoIV, ma poi dovro cambiare
+			// anche quelli in listaTicket, che e la lista principale
 			// da cui prendo informazioni e su cui lavoro sempre
 			ticket.setIV(predicted_IV);
 
 			/*
-			 * ticket.getAV().clear(); //elimino gli elementi di AV, poichè potrei avere
+			 * ticket.getAV().clear(); //elimino gli elementi di AV, poiche potrei avere
 			 * dati inconsistenti presi da JIRA, e setto manualmente gli altri.
 			 * 
 			 * for(int k = predicted_IV; k<FV;k++) { ticket.getAV().add(k); }
@@ -687,20 +687,20 @@ public class Main {
 		}
 
 		// modificando i ticket dentro listNoIV, automaticamente modifico i ticket
-		// presenti in listaTicket, quindi ora avrò la lista ticket
+		// presenti in listaTicket, quindi ora avro la lista ticket
 		// modificata con tutti i valori di IV e i valori di FV e OV coerenti
 		// RetrieveTicketsJIRA.printArrayList(listaTicket);
 
 		System.out.println("\n\nTicket con predictedIV = ");
 		for (int i = 0; i < listNoIV.size(); i++) {
 			/*
-			 * System.out.println("L'ID del ticket è = " + listaTicket.get(i).getID());
-			 * System.out.println("L'AV del ticket è = " + listaTicket.get(i).getAV());
-			 * System.out.println("La data di creazione del ticket è = " +
+			 * System.out.println("L'ID del ticket e = " + listaTicket.get(i).getID());
+			 * System.out.println("L'AV del ticket e = " + listaTicket.get(i).getAV());
+			 * System.out.println("La data di creazione del ticket e = " +
 			 * listaTicket.get(i).getCreationDate());
-			 * System.out.println("La data di risoluzione del ticket è = " +
-			 * listaTicket.get(i).getResolutionDate()); System.out.println("OV è = " +
-			 * listaTicket.get(i).getOV()); System.out.println("FV è = " +
+			 * System.out.println("La data di risoluzione del ticket e = " +
+			 * listaTicket.get(i).getResolutionDate()); System.out.println("OV e = " +
+			 * listaTicket.get(i).getOV()); System.out.println("FV e = " +
 			 * listaTicket.get(i).getFV());
 			 */
 
@@ -734,7 +734,7 @@ public class Main {
 			Integer OV = ticket.getOV();
 			Integer FV = ticket.getFV();
 
-			ticket.getAV().clear(); // elimino gli elementi di AV, poichè potrei avere dati inconsistenti presi da
+			ticket.getAV().clear(); // elimino gli elementi di AV, poiche potrei avere dati inconsistenti presi da
 									// JIRA, e setto manualmente gli altri.
 
 			for (int k = IV; k < FV; k++) {
@@ -753,7 +753,7 @@ public class Main {
 		/*
 		 * for(int i = 0; i<listaTicket.size();i++) {
 		 * 
-		 * //controllo le AV, e se in AV c'è una release > 7, la cancello Ticket ticket
+		 * //controllo le AV, e se in AV c'e una release > 7, la cancello Ticket ticket
 		 * = listaTicket.get(i); for(int k = 0 ; k <ticket.getAV().size(); k++) {
 		 * if(ticket.getAV().get(k) > halfRelease) {
 		 * ticket.getAV().remove(ticket.getAV().get(k)); k--; } }
@@ -788,7 +788,7 @@ public class Main {
 	 * System.out.println("\n\nsize listaTicket = " + listaTicket.size() + "\n\n");
 	 * for(int i = 0; i<listaTicket.size();i++) {
 	 * 
-	 * //controllo le AV, e se in AV c'è una release > 7, la cancello Ticket ticket
+	 * //controllo le AV, e se in AV c'e una release > 7, la cancello Ticket ticket
 	 * = listaTicket.get(i); for(int k = 0 ; k <ticket.getAV().size(); k++) {
 	 * if(ticket.getAV().get(k) > halfRelease) {
 	 * ticket.getAV().remove(ticket.getAV().get(k)); k--; } }

@@ -1,5 +1,5 @@
 /* 
- - prendo tutti i commit del progetto, e a ogni ticket associo il commit in cui è presente
+ - prendo tutti i commit del progetto, e a ogni ticket associo il commit in cui e presente
  
  - di ogni commit relativo al ticket, mi prendo i file cambiati in quel commit 
  
@@ -45,8 +45,8 @@ public class GetGitInfo {
 
 	private static ArrayList<String> commit_proj = new ArrayList<>();
 
-	private static final String REPO = "D:/Università/magistrale/isw2/Codici/bookkeeper/.git";
-	private static Path repoPath = Paths.get("D:/Università/magistrale/isw2/Codici/bookkeeper");
+	private static final String REPO = "D:/Universita/magistrale/isw2/Codici/bookkeeper/.git";
+	private static Path repoPath = Paths.get("D:/Universita/magistrale/isw2/Codici/bookkeeper");
 	private static HashMap<RevCommit, Integer> releaseCommitMap = new HashMap<>(); // hashmap con commit e release a cui
 																					// appartiene
 	private static Repository repository;
@@ -74,10 +74,10 @@ public class GetGitInfo {
 
 		// ora devo associare a ogni release una lista di commit che appartengono a tale
 		// release, per poi andarmi a prendere la data
-		// del commit più recente
+		// del commit piu recente
 		assignCommitRelease(releases); // aggiungo a classe release la lista dei commit
 
-		// prende la data più recente dei commit appartenenti a quella release
+		// prende la data piu recente dei commit appartenenti a quella release
 		// e mi prende tutti i file java relativi a quel commit, e poi li mette nelal
 		// listFile della classe release
 		// modifico classe release mettendo nella lista la classe e buggyness "no"
@@ -89,19 +89,19 @@ public class GetGitInfo {
 		Log.infoLog("lista Alias size = " + listAlias.size());
 
 		for (int i = 0; i < releases.size(); i++) {
-			// Log.infoLog("il numero di file java che mi servono è :" +
+			// Log.infoLog("il numero di file java che mi servono e :" +
 			// releases.get(i).getListFile().size());
 		}
 
 		checkCommRel(listaTicket, releases);
 
-		// prendo altre metriche (ho già preso buggyness)
+		// prendo altre metriche (ho gia preso buggyness)
 		Metrics.prova2(releases, repository);
 
 		// scrivo csv
 
 		// creoFileCSV
-		String filePath = "D:\\" + "Università\\magistrale\\isw2\\Codici\\deliverable2ISW2\\dataset.csv";
+		String filePath = "D:\\" + "Universita\\magistrale\\isw2\\Codici\\deliverable2ISW2\\dataset.csv";
 		Log.infoLog("starting write user.csv file: " + filePath);
 		try (FileWriter fileWriter = new FileWriter(filePath)) {
 			fileWriter.append("Version; FileName ; Size;nr;nAuth; LOC_touched;LOC_Added; Max_locAdded;"
@@ -243,7 +243,7 @@ public class GetGitInfo {
 	public static void updateListAlias(Release release) {
 		// per ogni insieme di alias di ogni file calcolo il nome piu recente ad esso
 		// assocaito
-		// scorro le release perchè ho i file in ordine
+		// scorro le release perche ho i file in ordine
 		for (FileJava2 file : release.getListFile()) {
 			String fileName = file.getName();
 			for (FileAlias fA : listAlias) {
@@ -260,7 +260,7 @@ public class GetGitInfo {
 	public static void updateListFileRelease(Release release) {
 
 		// per ogni DBEntry dotata di alias, imposto il nome del file come l'ultimo tra
-		// gli alias con cui è conosciuto
+		// gli alias con cui e conosciuto
 		for (FileJava2 file : release.getListFile()) {
 			String fileName = file.getName();
 			for (FileAlias fA : listAlias) {
@@ -285,7 +285,7 @@ public class GetGitInfo {
 
 		// scorro le release
 		// scorro hash map
-		// se valore hash map è release, associo il commit (key) alla release
+		// se valore hash map e release, associo il commit (key) alla release
 
 		for (int i = 0; i < releases.size(); i++) {
 			for (RevCommit commit : releaseCommitMap.keySet()) {
@@ -304,7 +304,7 @@ public class GetGitInfo {
 					+ releases.get(i).getListCommit().size() + "\n\n");
 			somma = somma + releases.get(i).getListCommit().size();
 		}
-		Log.infoLog("la somma di tutti i commit è : " + somma);
+		Log.infoLog("la somma di tutti i commit e : " + somma);
 	}
 
 	public static void getRecentCommitFiles(List<Release> releases) throws IOException, GitAPIException {
@@ -318,7 +318,7 @@ public class GetGitInfo {
 
 		for (i = 0; i < releases.size(); i++) {
 			// mi prendo tutte le date dei commit che stanno nella lsitacommit associata
-			// alla release, e mi prendo la data più recente
+			// alla release, e mi prendo la data piu recente
 
 			// scorro listaCommit della release e mi prendo le date di ogni commit
 			for (int k = 0; k < releases.get(i).getListCommit().size(); k++) {
@@ -359,7 +359,7 @@ public class GetGitInfo {
 	}
 
 	// per ogni ticket mi scorro la hashmap in cui ci sono i commit, mi prendo i
-	// commit in cui c'è il ticket, prendo la lista di diff nel commit, e controllo
+	// commit in cui c'e il ticket, prendo la lista di diff nel commit, e controllo
 	// la buggyness di ogni file nel commit
 	// e aggiorno la buggyness
 	public static void checkCommRel(List<Ticket> listaTicket, List<Release> releases) throws IOException {
@@ -426,7 +426,7 @@ public class GetGitInfo {
 		// in diffList ci stanno le diff relative al commit
 		// ora per ogni diff, scorro la lista delle release , prendo la listFile, prendo
 		// il name di ogni file, e lo confronto, prendo la release,
-		// se la release è contenuta in AV setto yes
+		// se la release e contenuta in AV setto yes
 		// System.out.println("AV = " + AV);
 
 		if (!aV.isEmpty()) {
@@ -462,7 +462,7 @@ public class GetGitInfo {
 
 								if (releases.get(k).getIndex() >= aV.get(0)
 										&& releases.get(k).getIndex() <= aV.get(aV.size() - 1)) {
-									// il file è buggy in quella release
+									// il file e buggy in quella release
 									releases.get(k).getListFile().get(j).setBugg("yes");
 
 								}
@@ -530,9 +530,9 @@ public class GetGitInfo {
 				e.printStackTrace(pw);
 				Log.errorLog(sw.toString());
 			}
-			Log.infoLog("\n\nIl numero di file .java relativi alla release è: " + filePath.size());
+			Log.infoLog("\n\nIl numero di file .java relativi alla release e: " + filePath.size());
 
-			// per ogni release mi devo prendere tutti i file, cerco quel file se è nel
+			// per ogni release mi devo prendere tutti i file, cerco quel file se e nel
 			// commit e mi prendo le differenze
 
 		}
@@ -560,7 +560,7 @@ public class GetGitInfo {
 		// i commit e la relativa release
 
 		float half = (float) releases.size() / 2;
-		int halfRelease = Math.round(half); // arrotondo in eccesso così prendo più release
+		int halfRelease = Math.round(half); // arrotondo in eccesso cosi prendo piu release
 		Log.infoLog("halfRelease = " + halfRelease);
 
 		// ritorna una lista che contiene tutti i commit del progetto
@@ -610,8 +610,8 @@ public class GetGitInfo {
 				// System.out.println(rev.getAuthorIdent().getEmailAddress()); //email autore
 				// commit
 
-				// devo verificare la relase a cui appartiene il commit, poichè, se è > della
-				// metà, non aggiungo il commit
+				// devo verificare la relase a cui appartiene il commit, poiche, se e > della
+				// meta, non aggiungo il commit
 				// e assegno la release al commit
 
 				// check contiene il numero di release (indice release) a cui appartiene il
@@ -620,7 +620,7 @@ public class GetGitInfo {
 
 				/*
 				 * SE DIMEZZO RELEASE if(check != 0) { //la release del commit appartiene alla
-				 * prima metà, quindi aggiungo il commit alla lista dei commit
+				 * prima meta, quindi aggiungo il commit alla lista dei commit
 				 * lista_commit.add(commit); releaseCommitMap.put(commit, check); vero++; } else
 				 * { falso++; }
 				 */
@@ -632,7 +632,7 @@ public class GetGitInfo {
 
 		}
 
-		Log.infoLog("il numero dei commit che hanno release < 7 è: " + listaCommit.size() + "\n\n");
+		Log.infoLog("il numero dei commit che hanno release < 7 e: " + listaCommit.size() + "\n\n");
 
 		// System.out.println("\n\n releaseCommitMap size = " + releaseCommitMap.size()
 		// + "\n"); //3344 commit totali
@@ -649,7 +649,7 @@ public class GetGitInfo {
 
 		for (int i = 0; i < releases.size(); i++) {
 			if (commitDate.isBefore(releases.get(i).getDate())) {
-				// Log.infoLog("La release del commit è: " + releases.get(i).getIndex());
+				// Log.infoLog("La release del commit e: " + releases.get(i).getIndex());
 				numRelease = releases.get(i).getIndex();
 				break; // fine
 			}

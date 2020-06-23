@@ -63,7 +63,7 @@ public class GetJIRAInfo {
 
 		if (releases.size() < 6)
 			return releaseList;
-		String pathname = "D:\\" + "Università\\magistrale\\isw2\\Codici\\deliverable2ISW2\\deliverable_2.csv";
+		String pathname = "D:\\" + "Universita\\magistrale\\isw2\\Codici\\deliverable2ISW2\\deliverable_2.csv";
 		try (FileWriter fileWriter = new FileWriter(pathname)) {
 
 			fileWriter.append("Index;Version ID;Version Name;Date");
@@ -94,10 +94,10 @@ public class GetJIRAInfo {
 		Integer index = 1;
 
 		for (Map.Entry<LocalDateTime, String> entry : map.entrySet()) {
-			// la chiave è la data della release
+			// la chiave e la data della release
 			LocalDateTime key = LocalDateTime.parse(entry.getKey().toString());
 
-			// il valore è il numero della release
+			// il valore e il numero della release
 			String value = entry.getValue();
 			Release release = new Release(index, key, value);
 			releaseList.add(release);
@@ -154,7 +154,7 @@ public class GetJIRAInfo {
 	public static List<Ticket> compareDateVersion(List<Release> releases2, List<LocalDateTime> dateList,
 			List<Ticket> listaTicket) {
 
-		// releases è una lista di release che hanno data e versione (dal codice
+		// releases e una lista di release che hanno data e versione (dal codice
 		// Falessi)
 		// dateList contiene tutte le date relative ai ticket in ordine cronologico
 
@@ -165,7 +165,7 @@ public class GetJIRAInfo {
 
 			for (int j = 0; j < releases2.size(); j++) {
 
-				// o è inferiore
+				// o e inferiore
 				if (dataTicket.isBefore(releases2.get(j).getDate())) {
 
 					assignVersion(dataTicket, listaTicket, releases2.get(j).getIndex());
@@ -222,7 +222,7 @@ public class GetJIRAInfo {
 		do {
 			// Only gets a max of 1000 at a time, so must do this multiple times if bugs
 			// >1000
-			j = i + 1000; // da 1 a 1000 perchè ogni query non può avere piu di 1000 risultati
+			j = i + 1000; // da 1 a 1000 perche ogni query non puo avere piu di 1000 risultati
 			String url = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22" + projName
 					+ "%22AND%22issueType%22=%22Bug%22AND(%22status%22=%22closed%22OR"
 					+ "%22status%22=%22resolved%22)AND%22resolution%22=%22fixed%22&fields=key,resolutiondate,affectedVersion,versions,created&startAt="
@@ -274,11 +274,11 @@ public class GetJIRAInfo {
 
 	public static List<LocalDateTime> addAndSortDateTickets(List<Ticket> listaTicket) {
 
-		// ho lasciayo localdatetime, così ho anche l'orario di FV e OV, anche se avrei
+		// ho lasciayo localdatetime, cosi ho anche l'orario di FV e OV, anche se avrei
 		// potuto mettere localdate ma
 		// avrei dovuto cambiare il codice di falessi
 
-		// cosi facendo non ci sono duplicati (è difficile trovare orario uguale di FV e
+		// cosi facendo non ci sono duplicati (e difficile trovare orario uguale di FV e
 		// Ov dello stesso giorno)
 
 		List<LocalDateTime> dateList = new ArrayList<>();
