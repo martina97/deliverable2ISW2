@@ -2616,3 +2616,16 @@ Il numero di file .java relativi alla release e: 468</message>
   <thread>1</thread>
   <message>lista Alias size = 1421</message>
 </record>
+<record>
+  <date>2020-06-23T11:30:21.786164200Z</date>
+  <millis>1592911821786</millis>
+  <nanos>164200</nanos>
+  <sequence>36</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>milestone1.Log</class>
+  <method>infoLog</method>
+  <thread>1</thread>
+  <message>starting write user.csv file: D:\Universita\magistrale\isw2\Codici\deliverable2ISW2\dataset.csv</message>
+</record>
+</log>
