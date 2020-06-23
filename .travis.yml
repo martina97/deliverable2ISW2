@@ -1,5 +1,4 @@
 language: java
 jdk:
 - openjdk8
-
-scripts: ant build
+script: ant build
